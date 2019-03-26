@@ -1,10 +1,50 @@
-# Book Down Notes {-}
+# Book Down Notes
 Pandoc has added some perks to markdown synthax: foot notes and citations in addition to ability of generating multi formats from the same document
 
-1. chapters have **.Rmd extension**. they are their own files. each of these .Rmd files (chapters) must start with "# chapter title". 
+## general steps to make a book and output it
 
-2. by default, these files (chapters) are put together by the order of file names. i.e. 01-blah come first than 02-blooh. files names begining with "_" are skipped. 
+1. chapters have **.Rmd extension**. they are their own files. each of these .Rmd files (chapters) must start with **"# chapter title"**. 
 
-3. a file nameed "index.Rmd" will always be treated as the first file when chapters are put together.
+2. by default, these files (chapters) are put together by the order of file names. i.e. 01-blah come first than 02-blooh. files names begining with **"_"** are skipped. 
 
-4. 
+3. a file nameed **"index.Rmd"** will always be treated as the first file when chapters are put together.
+
+4. to define your own list and order of RMD files for the book, make a file called **"_bookdown.yml"**. in this file use the filed name rmd_files:["index.Rmd", "abstract.Rmd", "intro.Rmd", ...]. you can also give title author info etc and set different priority for different output formates (HTML or latex/pdf). instruction in the bookdown [tutorial](https://bookdown.org/yihui/bookdown/usage.html)
+
+5. to output files in VS code, you need to open **bookdown R prompt** by **Ctrl + Shift + P**, then typing **bookdown::PDF book**. when the command prompt opens, type in one of the following:
+bookdown::render_book("foo.Rmd", "bookdown::gitbook")
+bookdown::render_book("foo.Rmd", "bookdown::pdf_book")
+
+6. generally press **Ctrl + Shift + P**, then type bookdown and see what options do you have available
+
+## Syntax of common componenets
+
+1. _itallic_ or *itallic* (** or __). __bold__ or **bold**
+
+2.  ~subscript~ example: H~2~SO~4~. ^superscript^. use ` for code`. 
+
+3. links are made usng [text] (link) example is [Rstudio](https://www.rstudio.com). no space between [] and (). same for images, except **! [alt text for img title] (path\to\image)**. foot notes are made via ^ []. example ^[this Is a footnote]. 
+
+4. if you dont want numbered headings add {-}: # heading {-} 
+
+5. unordered list start with +, -, *. to do nesting use indentation (press Tab). block quotes are written after ">"
+> "go khori ezafe bar sazman nakon"
+>
+> some dude
+
+6. for math use LaTex syntax between two dollar signs.
+`$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$` would output $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$. 
+
+7. to number and reference equations use
+\begin{equation} 
+    f\left(k\right) = \binom{n}{k} p^k\left(1-p\right){n-k}
+    (\#eq:binom)
+\end{equation}
+
+the equation is supposed to be accessible via referencing like this: \@ref(eq:binom). **does not work!**
+
+8. text references: you have a piece of text, it could be figure caption or what ever, you wanna give it a label so that you use it later.
+
+(ref: label) here is some text for later addressing
+
+i surely hope that i can reference \@ref(label) any time i want. 

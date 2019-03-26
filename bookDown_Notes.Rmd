@@ -47,4 +47,4 @@ the equation is supposed to be accessible via referencing like this: \@ref(eq:bi
 
 (ref: label) here is some text for later addressing
 
-i surely hope that i can reference \@ref(label) any time i want. 
+i surely hope that i can reference \@ref(label) any time i want it also did not work!. 

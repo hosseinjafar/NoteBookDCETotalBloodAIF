@@ -1,4 +1,10 @@
-# Book Down notes!
+# Book Down Notes {-}
 Pandoc has added some perks to markdown synthax: foot notes and citations in addition to ability of generating multi formats from the same document
 
-1. chapters have .Rmd extension. they are their own files. each of these .Rmd files (chapters) must start with "# chapter title". 
+1. chapters have **.Rmd extension**. they are their own files. each of these .Rmd files (chapters) must start with "# chapter title". 
+
+2. by default, these files (chapters) are put together by the order of file names. i.e. 01-blah come first than 02-blooh. files names begining with "_" are skipped. 
+
+3. a file nameed "index.Rmd" will always be treated as the first file when chapters are put together.
+
+4. 

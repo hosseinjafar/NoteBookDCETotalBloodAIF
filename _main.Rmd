@@ -15,7 +15,6 @@ Pandoc has added some perks to markdown synthax: foot notes and citations in add
 bookdown::render_book("foo.Rmd", "bookdown::gitbook")
 bookdown::render_book("foo.Rmd", "bookdown::pdf_book")
 
-
 6. generally press **Ctrl + Shift + P**, then type bookdown and see what options do you have available
 
 ## Syntax of common componenets
@@ -49,3 +48,6 @@ the equation is supposed to be accessible via referencing like this: \@ref(eq:bi
 (ref: label) here is some text for later addressing
 
 i surely hope that i can reference \@ref(label) any time i want it also did not work!. 
+
+<!--chapter:end:bookDown_Notes.Rmd-->
+
